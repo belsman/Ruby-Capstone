@@ -1,15 +1,9 @@
 # CovidWebSpider
 ## A CLI-Program for getting information about COVID-19 CASES
 
-> This project about building a **Web crawler Program** that extract Covid-19 data from a web page and presents it to a user via the Command line interface. A user gets to see updates on covid-19 data reported world wide and on a country and 
-region wise. Read this to learn more on what a web crawler is.
+> This project about building a Web crawler Program that extracts COVID-19 data from a web page and presents it to a user via the Command-line interface. A user gets to see updates on COVID-19 data reported worldwide and on a country and region wise. [Read this to learn more about what a web crawler is.](https://en.wikipedia.org/wiki/Web_crawler)
 
-![screenshot](./images/screenshot.png)
-
-## Project Description Video
-
-🔗 [loom](https://www.loom.com/share/43c8209d90c94e21a2245c22e29e5dfb)
-
+![screenshot](./image/screenshot.png)
 
 ## Built With
 
@@ -32,10 +26,10 @@ You need Ruby runtime inorder to have this run on your Machine
 
 1) Install Ruby if you don't have it
 2) Open the Terminal
-3) [Download](Clone the repository to your machine)
+3) [Download](https://github.com/belsman/Ruby-Capstone.git)
 
 ```sh
-https://github.com/belsman/Ruby-Capstone.git
+git clone https://github.com/belsman/Ruby-Capstone.git
 ```
 
 4) Run 'cd Ruby-Capstone' to enter the main directory
@@ -45,10 +39,10 @@ https://github.com/belsman/Ruby-Capstone.git
 
 1)  Open terminal
 2) Run ```cd Ruby-Capstone``` to enter main directory
-3) Run 'cd bin/main' to enter file directory
-4) Be sure connected to the internet
-4) Run 'ruby main' to start the game
-5) Here on you can see the Covid-19 data for every region and country
+3) Run ```cd bin/main``` to enter file directory
+4) Be sure you're connected to the internet
+4) Run ```ruby main``` to start the game
+5) Here on you can see the COVID-19 data for every region and country
 
 ## Author
 

@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require_relative '../lib/spider'
 require_relative '../lib/utils'
 
@@ -46,7 +48,6 @@ if spider.connected
     puts 'Get Report Countries or Soverignty'
     puts 'Example: Type in either (Nigeria, Germany, Kenya, Romania, Western-Sahara etc...)'
     chosen_region = get_user_input(region_list)
-    puts chosen_region
     break if chosen_region.empty?
 
     puts ''
