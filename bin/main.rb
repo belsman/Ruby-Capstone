@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-
 require_relative '../lib/spider'
 require_relative '../lib/utils'
 
