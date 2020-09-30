@@ -29,25 +29,31 @@ puts '.....Fetching Daily Data'
 
 spider = CovidWebSpider.new
 spider.make_connection
-all_data = spider.payload
-region_list = all_data.keys
-world_data = all_data['world']
 
-puts 'Success!'
-puts ''
+if spider.connected
+  all_data = spider.payload
+  region_list = all_data.keys
+  world_data = all_data['world']
 
-puts display_covid_table(world_data)
+  puts 'Success!'
+  puts ''
 
-puts ''
-
-loop do
-  puts 'Get Report Countries or Soverignty'
-  puts 'Example: Type in either (Nigeria, Germany, Kenya, Romania, Western-Sahara etc...)'
-  chosen_region = get_user_input(region_list)
-  puts chosen_region
-  break if chosen_region.empty?
+  puts display_covid_table(world_data)
 
   puts ''
-  chosen_region_data = all_data[chosen_region]
-  puts display_covid_table(chosen_region_data, chosen_region)
+
+  loop do
+    puts 'Get Report Countries or Soverignty'
+    puts 'Example: Type in either (Nigeria, Germany, Kenya, Romania, Western-Sahara etc...)'
+    chosen_region = get_user_input(region_list)
+    puts chosen_region
+    break if chosen_region.empty?
+
+    puts ''
+    chosen_region_data = all_data[chosen_region]
+    puts display_covid_table(chosen_region_data, chosen_region)
+  end
+else
+  puts ''
+  puts "Connection Error .... Seem like you don't have internet connection."
 end
