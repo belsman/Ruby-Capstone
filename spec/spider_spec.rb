@@ -1,3 +1,5 @@
+require 'nokogiri'
+require 'open-uri'
 require './lib/spider'
 
 describe CovidWebSpider do
