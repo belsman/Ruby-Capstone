@@ -19,9 +19,9 @@ describe CovidWebSpider do
       expect(spider.doc).to be_an doc_klas
     end
   end
-  
+
   describe '#crawl' do
-    let(:spider) { CovidWebSpider.new}
+    let(:spider) { CovidWebSpider.new }
 
     it 'returns a Nokogiri tbody node' do
       spider.make_connection
@@ -56,9 +56,9 @@ describe CovidWebSpider do
     end
 
     it 'can access country as key and data as values' do
-      country = %w[USA India China].shuffle.first
+      country = %w[USA India China].sample
       cocoon = spider.payload
-      expect(cocoon[country].length).to  be_eql(6)
+      expect(cocoon[country].length).to be_eql(6)
     end
   end
 end

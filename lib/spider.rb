@@ -6,7 +6,7 @@ require 'open-uri'
 class CovidWebSpider
   attr_reader :doc, :connected
 
-  def initialize(url='https://www.worldometers.info/coronavirus/')
+  def initialize(url = 'https://www.worldometers.info/coronavirus/')
     @url = url
     @doc = nil
     @connected = false
@@ -16,10 +16,10 @@ class CovidWebSpider
     begin
       @doc = Nokogiri::HTML(URI.open('https://www.worldometers.info/coronavirus/'))
       @connected = true
-    rescue
+    rescue StandardError
       @connected = false
     end
-    return @connected
+    @connected
   end
 
   def crawl
