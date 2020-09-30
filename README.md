@@ -26,7 +26,7 @@ You need Ruby runtime inorder to have this run on your Machine
 
 1) Install Ruby if you don't have it
 2) Open the Terminal
-3) [Download](https://github.com/belsman/Ruby-Capstone.git)
+3) Run
 
 ```sh
 git clone https://github.com/belsman/Ruby-Capstone.git
