@@ -21,11 +21,17 @@ describe CovidWebSpider do
   end
   
   describe '#crawl' do
-    it 'it returns a Nokogiri tbody node' do
+    let(:spider) { CovidWebSpider.new}
+
+    it 'returns a Nokogiri tbody node' do
       spider.make_connection
-    #   data_table = spider.doc.css('table#main_table_countries_today tbody').first
-    #   puts data_table.name
       expect(spider.crawl.name).to be_eql('tbody')
+    end
+
+    it 'returns 223 rows means page hasn\'t changed' do
+      spider.make_connection
+      data_rows_numbers = spider.crawl.css('tr').length
+      expect(data_rows_numbers).to be_eql(223)
     end
   end
 end
