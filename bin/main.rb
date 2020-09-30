@@ -1,4 +1,3 @@
-require 'terminal-table'
 require_relative '../lib/spider'
 require_relative '../lib/utils'
 
@@ -7,6 +6,8 @@ def get_user_input(data_to_check)
   loop do
     user_input = gets.chomp.downcase
     break if data_to_check.include?(user_input) || user_input.empty?
+
+    puts user_input + ' Does not exist'
   end
   user_input
 end
