@@ -19,6 +19,10 @@ def display_covid_table(report_list)
   Terminal::Table.new title: 'WORLD WIDE', headings: %w[CASES DEATH RECOVERED], rows: rows, style: { width: 50 }
 end
 
+def get_matching_location(user_location)
+  # returns a valid location that matches
+end
+
 puts '.....Fetching Daily Data'
 sleep(3)
 stud_bool = true
