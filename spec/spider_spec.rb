@@ -20,4 +20,12 @@ describe CovidWebSpider do
     end
   end
   
+  describe '#crawl' do
+    it 'it returns a Nokogiri tbody node' do
+      spider.make_connection
+    #   data_table = spider.doc.css('table#main_table_countries_today tbody').first
+    #   puts data_table.name
+      expect(spider.crawl.name).to be_eql('tbody')
+    end
+  end
 end

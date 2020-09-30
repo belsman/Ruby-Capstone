@@ -21,13 +21,11 @@ class CovidWebSpider
     end
     return @connected
   end
+
+  def crawl
+    @doc.css('table#main_table_countries_today tbody').first
+  end
 end
-
-# # Fetch and parse HTML document
-# 
-
-# #fetch the data in the table
-# data_table = doc.css('table#main_table_countries_today tbody').first
 
 # # filter in the rows of the data_table
 # data_rows = data_table.css('tr').slice(0, 10)
