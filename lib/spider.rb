@@ -25,13 +25,14 @@ class CovidWebSpider
   def crawl
     @doc.css('table#main_table_countries_today tbody').first
   end
+
+  def payload
+    @cocoon = {}
+    crawl.css('tr').each do |row|
+      tranformed_row = row.css('td').map { |data| data.content.strip }
+      _, country, total_cases, new_cases, total_death, new_death, total_recovered, active_cases = tranformed_row
+      @cocoon[country] = [total_cases, new_cases, total_death, new_death, total_recovered, active_cases]
+    end
+    @cocoon
+  end
 end
-
-# # filter in the rows of the data_table
-# data_rows = data_table.css('tr').slice(0, 10)
-
-# #parse these rows
-# for row in data_rows
-#   sn, country, t_cases, n_cases, t_death, n_death, t_recovered, a_cases = row.css 'td'
-#   puts "#{country.content.strip} #{t_cases.content.strip} #{n_cases.content.strip} #{t_death.content.strip} #{n_death.content.strip} #{t_recovered.content.strip} #{a_cases.content.strip}"
-# end
