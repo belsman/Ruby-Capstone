@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'rubocop', '~>0.81.0'
 gem 'nokogiri'
+gem 'rubocop', '~>0.81.0'
 gem 'terminal-table'
