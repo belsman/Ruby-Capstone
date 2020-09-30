@@ -58,7 +58,7 @@ describe CovidWebSpider do
     it 'can access country as key and data as values' do
       country = %w[USA India China].sample
       cocoon = spider.payload
-      expect(cocoon[country].length).to be_eql(6)
+      expect(cocoon[country.downcase].length).to be_eql(6)
     end
   end
 end

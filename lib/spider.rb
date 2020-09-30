@@ -29,8 +29,8 @@ class CovidWebSpider
   def payload
     @cocoon = {}
     crawl.css('tr').each do |row|
-      tranformed_row = row.css('td').map { |data| data.content.strip }
-      _, country, total_cases, new_cases, total_death, new_death, total_recovered, active_cases = tranformed_row
+      tranformed_row = row.css('td').map { |data| data.content.downcase.strip }
+      _, country, total_cases, new_cases, total_death, new_death, total_recovered, _, active_cases = tranformed_row
       @cocoon[country] = [total_cases, new_cases, total_death, new_death, total_recovered, active_cases]
     end
     @cocoon

@@ -1,4 +1,15 @@
 require 'terminal-table'
+require_relative '../lib/spider'
+require_relative '../lib/utils'
+
+def get_user_input(data_to_check)
+  user_input = ''
+  loop do
+    user_input = gets.chomp.downcase
+    break if data_to_check.include?(user_input) || user_input.empty?
+  end
+  user_input
+end
 
 puts '
 
@@ -13,34 +24,29 @@ press ENTER to continue.
 
 gets
 
-def display_covid_table(report_list)
-  rows = []
-  rows << report_list
-  Terminal::Table.new title: 'WORLD WIDE', headings: %w[CASES DEATH RECOVERED], rows: rows, style: { width: 50 }
-end
-
-def get_matching_location(user_location)
-  # returns a valid location that matches
-end
-
 puts '.....Fetching Daily Data'
-sleep(3)
-stud_bool = true
-if stud_bool
-  puts 'Success!'
-  sleep(2)
-  puts ''
-  puts display_covid_table(%w[000000 000000 000000])
-  puts ''
+
+spider = CovidWebSpider.new
+spider.make_connection
+all_data = spider.payload
+region_list = all_data.keys
+world_data = all_data['world']
+
+puts 'Success!'
+puts ''
+
+puts display_covid_table(world_data)
+
+puts ''
+
+loop do
   puts 'Get Report Countries or Soverignty'
   puts 'Example: Type in either (Nigeria, Germany, Kenya, Romania, Western-Sahara etc...)'
-  gets.chomp
-  if stud_bool
-    # if location matches any in the collated data -- show result
-    puts display_covid_table(%w[000000 000000 000000])
-  else
-    puts 'location not found'
-  end
-else
-  puts 'An Error Occurred'
+  chosen_region = get_user_input(region_list)
+  puts chosen_region
+  break if chosen_region.empty?
+
+  puts ''
+  chosen_region_data = all_data[chosen_region]
+  puts display_covid_table(chosen_region_data, chosen_region)
 end
