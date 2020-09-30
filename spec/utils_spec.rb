@@ -1,4 +1,3 @@
-require 'terminal-table'
 require './lib/utils'
 
 describe 'utils' do
