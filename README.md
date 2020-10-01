@@ -12,7 +12,7 @@
     - [Nokogiri](https://nokogiri.org/)
     - [Rubocop](https://github.com/rubocop-hq/rubocop)
     - [Terminal Table](https://github.com/tj/terminal-table)
-    - [Repec](https://rspec.info/)
+    - [Rspec](https://rspec.info/)
 
 ## Getting Started
 
@@ -35,14 +35,25 @@ git clone https://github.com/belsman/Ruby-Capstone.git
 4) Run 'cd Ruby-Capstone' to enter the main directory
 5)  Run 'bundle install'
 
+
+### Run Rspec
+
+1) Open the terminal
+2) Run ```gem install rspec```
+3) Run ```cd Ruby-Capstone``` to enter main directory
+4) Ensure there is network connnection
+5) Run ```rspec```
+6) 100% passing tests mean you are ready to go
+
 ### Usage
 
-1)  Open terminal
+1) Open the terminal
 2) Run ```cd Ruby-Capstone``` to enter main directory
 3) Run ```cd bin/main``` to enter file directory
 4) Be sure you're connected to the internet
 4) Run ```ruby main``` to start the game
 5) Here on you can see the COVID-19 data for every region and country
+
 
 ## Author
 
