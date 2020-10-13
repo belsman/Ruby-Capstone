@@ -12,7 +12,7 @@ class CovidWebSpider
 
   def make_connection
     begin
-      @doc = Nokogiri::HTML(URI.open('https://www.worldometers.info/coronavirus/'))
+      @doc = Nokogiri::HTML(URI.open(url))
       @connected = true
     rescue StandardError
       @connected = false
